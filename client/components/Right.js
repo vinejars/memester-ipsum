@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-let memeWords = ['many wow', 'chad', 'doge', 'lol', 'omg wow', 'omg shoes', 'can haz cheeseburger', 'l33t', '!!!111!eleven', 'one does not simply', 'dont be like bill', 'not sure if... or just', 'shut up and take my money', 'me to me:', 'same', 'stonks', 'thats the joke']
+let memeWords = ['many wow', 'you cant if you never', 'chicky nuggies', 'i dont always','chad', 'ermahgerd', 'doge', 'lol', 'omg wow', 'omg shoes', 'can haz cheeseburger', 'l33t', '!!!111!eleven', 'one does not simply', 'dont be like bill', 'not sure if... or just', 'shut up and take my money', 'me to me:', 'same', 'stonks', 'thats the joke', 'but thats none of my business', 'rawr', 'henlo', 'moar', 'uwu', 'theyre the same picture']
 let otherWords = ['the one', 'and ok', 'and then', 'and so', 'let them', 'my and', 'your was', 'who is', 'our other', 'some time', 'and them', 'by the', ]
 
 export default class Right extends Component {
