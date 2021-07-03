@@ -249,9 +249,10 @@ class Right extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   }
 
   handleSubmit() {
-    console.log(this.state.num);
-    if (this.state.num) document.querySelector('input').value = '';
-    this.generate();
+    if (!this.state.ipsum.length) {
+      document.querySelector('input').value = '';
+      this.generate();
+    }
   }
 
   handleClear() {
@@ -298,13 +299,17 @@ class Right extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       id: "pnum",
       type: "text",
       onChange: this.handleChange
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-      onClick: this.handleSubmit
-    }, "Submit")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      id: "clear"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: "buttons"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      className: "submit",
+      onClick: this.handleSubmit
+    }, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      className: "clear",
       onClick: this.handleClear
-    }, "Clear")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.state.ipsum.length ? this.state.ipsum.map(val => {
+    }, "Clear")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: "ipsum-text"
+    }, this.state.ipsum.length ? this.state.ipsum.map(val => {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, val), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
     }) : null));
   }

@@ -28,10 +28,10 @@ export default class Right extends Component {
       }
 
     handleSubmit(){
-        console.log(this.state.num)
-        if(this.state.num)
+        if(!this.state.ipsum.length){
         document.querySelector('input').value = '';
         this.generate()
+        }
     }
 
     handleClear(){
@@ -72,12 +72,12 @@ export default class Right extends Component {
                 <div id='number-picker'>
                 <h4>How many paragraphs?</h4>
                 <input id='pnum' type='text' onChange={this.handleChange}/>
-                <button onClick={this.handleSubmit}>Submit</button>
                 </div>
-                <div id='clear'>
-                    <button onClick={this.handleClear}>Clear</button>
+                <div id='buttons'>
+                    <button className='submit' onClick={this.handleSubmit}>Submit</button>
+                    <button className='clear' onClick={this.handleClear}>Clear</button>
                 </div>
-                <div>
+                <div id='ipsum-text'>
                     { this.state.ipsum.length ? (
                    this.state.ipsum.map((val) =>{
                        return <div><p>{val}</p><br/></div>
