@@ -29,7 +29,7 @@
     font-style: italic;
 }
 
-#number-picker {
+#number-picker, #clear {
     display: block;
     width: 50%;
     margin:auto;

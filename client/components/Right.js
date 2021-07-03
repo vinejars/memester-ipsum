@@ -12,25 +12,38 @@ export default class Right extends Component {
         }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClear = this.handleClear.bind(this)
     this.generate = this.generate.bind(this)
     }
 
     handleChange(evt) {
-        if(parseInt(evt.target.value) > 0 && parseInt(evt.target.value) < 50 && parseInt(evt.target.value))
-        this.setState({
+        if(!Number(evt.target.value)){
+            alert('It needs to be a number, dingus!')
+            document.querySelector('input').value = '';
+        } else if(parseInt(evt.target.value) > 0 || parseInt(evt.target.value) < 50)
+       { this.setState({
           num : parseInt(evt.target.value),
         });
+    } 
       }
 
     handleSubmit(){
         console.log(this.state.num)
+        if(this.state.num)
         document.querySelector('input').value = '';
         this.generate()
     }
 
+    handleClear(){
+        this.setState({
+            ipsum: [],
+            num: 0
+        })
+    }
 
     generate(){
         let str = 'I am once again asking '
+        let arr = [];
         for(let i =0; i < this.state.num; i++){
             for (let p = 0; p < 5; p++){
             for(let s=0; s< 15; s++){
@@ -45,9 +58,11 @@ export default class Right extends Component {
             }
             str = str.concat('.')
         }
+        arr.push(str)
+        str = ''
         }
         this.setState({
-            ipsum : str
+            ipsum : arr
         })
     }
 
@@ -59,9 +74,20 @@ export default class Right extends Component {
                 <input id='pnum' type='text' onChange={this.handleChange}/>
                 <button onClick={this.handleSubmit}>Submit</button>
                 </div>
-                <div>
-                    <p>{this.state.ipsum}</p>
+                <div id='clear'>
+                    <button onClick={this.handleClear}>Clear</button>
                 </div>
+                <div>
+                    { this.state.ipsum.length ? (
+                   this.state.ipsum.map((val) =>{
+                       return <div><p>{val}</p><br/></div>
+                   })
+                    ) : (
+                        null
+                    )
+                   }
+                </div>
+
             </div>
         )
     }

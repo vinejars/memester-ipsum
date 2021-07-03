@@ -233,23 +233,37 @@ class Right extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClear = this.handleClear.bind(this);
     this.generate = this.generate.bind(this);
   }
 
   handleChange(evt) {
-    if (parseInt(evt.target.value) > 0 && parseInt(evt.target.value) < 50 && parseInt(evt.target.value)) this.setState({
-      num: parseInt(evt.target.value)
-    });
+    if (!Number(evt.target.value)) {
+      alert('It needs to be a number, dingus!');
+      document.querySelector('input').value = '';
+    } else if (parseInt(evt.target.value) > 0 || parseInt(evt.target.value) < 50) {
+      this.setState({
+        num: parseInt(evt.target.value)
+      });
+    }
   }
 
   handleSubmit() {
     console.log(this.state.num);
-    document.querySelector('input').value = '';
+    if (this.state.num) document.querySelector('input').value = '';
     this.generate();
+  }
+
+  handleClear() {
+    this.setState({
+      ipsum: [],
+      num: 0
+    });
   }
 
   generate() {
     let str = 'I am once again asking ';
+    let arr = [];
 
     for (let i = 0; i < this.state.num; i++) {
       for (let p = 0; p < 5; p++) {
@@ -267,10 +281,13 @@ class Right extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 
         str = str.concat('.');
       }
+
+      arr.push(str);
+      str = '';
     }
 
     this.setState({
-      ipsum: str
+      ipsum: arr
     });
   }
 
@@ -283,7 +300,13 @@ class Right extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       onChange: this.handleChange
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
       onClick: this.handleSubmit
-    }, "Submit")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, this.state.ipsum)));
+    }, "Submit")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: "clear"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      onClick: this.handleClear
+    }, "Clear")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.state.ipsum.length ? this.state.ipsum.map(val => {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, val), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
+    }) : null));
   }
 
 }
