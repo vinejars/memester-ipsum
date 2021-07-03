@@ -1,0 +1,44 @@
+/*Navbar*/
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    font-family: 'Anton', sans-serif;
+    padding-bottom: 70px;
+    width: 100vh;
+}
+
+/*Main*/
+#column-maker{
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    align-items: flex-start;
+    grid-template-areas: 
+      "left right"; 
+  }
+  .left { grid-area: left; }
+  .right { grid-area: right; }
+
+/*Left*/
+
+#space{
+    padding-left: 200px;
+    font-style: italic;
+}
+
+#number-picker {
+    display: block;
+    width: 50%;
+    margin:auto;
+    font-family: 'Anton', sans-serif;
+
+}
+
+h2{
+    font-family: 'Anton', sans-serif;
+
+}
+
