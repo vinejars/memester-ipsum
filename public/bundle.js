@@ -127,6 +127,58 @@ const App = () => {
 
 /***/ }),
 
+/***/ "./client/components/Carousel.js":
+/*!***************************************!*\
+  !*** ./client/components/Carousel.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Carousel)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+let memeArr = ['/meme1.jpeg', '/meme2.jpeg', '/meme3.jpeg', '/meme4.jpeg', '/meme5.jpeg', '/meme6.jpeg', '/meme7.jpeg'];
+class Carousel extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+  constructor() {
+    super();
+    this.state = {
+      counter: 0
+    };
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      if (this.state.counter < 6) {
+        this.setState({
+          counter: this.state.counter += 1
+        });
+      } else {
+        this.setState({
+          counter: 0
+        });
+      }
+
+      console.log(this.state.counter);
+    }, 3000);
+  }
+
+  render() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: "meme-container"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      src: memeArr[this.state.counter],
+      width: 350,
+      className: "meme"
+    }));
+  }
+
+}
+
+/***/ }),
+
 /***/ "./client/components/Left.js":
 /*!***********************************!*\
   !*** ./client/components/Left.js ***!
@@ -136,14 +188,16 @@ const App = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Left)
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Carousel */ "./client/components/Carousel.js");
 
-function Left() {
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "I am once again asking..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     id: "space"
-  }, "for some dang ole filler text"));
+  }, "for some dang ole filler text"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Carousel__WEBPACK_IMPORTED_MODULE_1__.default, null));
 }
 
 /***/ }),

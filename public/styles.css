@@ -27,6 +27,7 @@
 #space{
     padding-left: 200px;
     font-style: italic;
+    padding-bottom: 10px;
 }
 
 #number-picker, #buttons {
@@ -100,4 +101,23 @@ h2{
                 
 #ipsum-text{
     width: 500px;
+}
+
+/*Image Carousel*/
+
+.meme{
+  margin: auto;
+  width: 90%;
+  z-index: -50;
+ border-radius: 50%;
+}
+
+#meme-container { 
+  box-shadow: inset 1px 1px 15px -1px #000000;
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
