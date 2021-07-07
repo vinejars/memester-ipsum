@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-let memeArr = ['/meme1.jpeg', '/meme2.jpeg','/meme3.jpeg','/meme4.jpeg','/meme5.jpeg','/meme6.jpeg', '/meme7.jpeg']
+let memeArr = ['/meme1.png', '/meme2.png','/meme3.png','/meme4.png','/meme5.png','/meme6.png', '/meme7.png']
 
 export default class Carousel extends Component {
     constructor(){

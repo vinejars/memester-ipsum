@@ -140,7 +140,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
-let memeArr = ['/meme1.jpeg', '/meme2.jpeg', '/meme3.jpeg', '/meme4.jpeg', '/meme5.jpeg', '/meme6.jpeg', '/meme7.jpeg'];
+let memeArr = ['/meme1.png', '/meme2.png', '/meme3.png', '/meme4.png', '/meme5.png', '/meme6.png', '/meme7.png'];
 class Carousel extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   constructor() {
     super();
