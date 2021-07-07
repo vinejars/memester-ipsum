@@ -121,3 +121,21 @@ border-radius: 40%;
     align-content: center;
     justify-content: center;
 }
+
+@media only screen and (max-width: 600px) {
+ 
+
+  #column-maker{
+    display:flex;
+    flex-direction: column;
+  }
+
+  #meme-container{
+    width: 80%;
+    height: 80%;
+  }
+
+  .meme{
+    width: 70%;
+  }
+ }
